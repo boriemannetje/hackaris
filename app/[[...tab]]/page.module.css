@@ -19,12 +19,6 @@
   text-align: center;
 }
 
-.name {
-  font-size: clamp(34px, 8vw, 62px);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
 .meta {
   margin-top: 12px;
   font-size: 15px;
@@ -56,7 +50,7 @@
 
 .content {
   margin-top: 28px;
-  border: 1px solid var(--fg);
+  border: 1px solid var(--fg-outline);
   padding: 18px;
   display: flex;
   flex-direction: column;

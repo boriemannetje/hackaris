@@ -20,6 +20,10 @@ const siteUrl = "https://hackaris.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
+  },
   title: {
     default: "Hackaris - Paris Indie Makers Coworking",
     template: "%s | Hackaris",

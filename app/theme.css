@@ -6,10 +6,10 @@
 */
 
 :root {
-  --bg: #fdf6e3;
-  --fg: #2255c3;
+  --bg: #2255c3;
+  --fg: #fdf6e3;
+  --fg-outline: color-mix(in srgb, var(--fg) 50%, transparent);
 }
-
 
 
 

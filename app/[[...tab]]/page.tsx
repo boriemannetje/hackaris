@@ -62,9 +62,6 @@ export default function Home() {
                 <strong>5:30 PM - Apéro</strong> nearby
               </li>
             </ul>
-            <p className={styles.cta}>
-              Fill out the form to request an invite.
-            </p>
           </section>
         </div>
 

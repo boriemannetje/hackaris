@@ -1,9 +1,19 @@
 .wrap {
+  position: relative;
   width: 100%;
   max-width: 780px;
   margin-top: 34px;
-  border: 1px solid var(--fg);
+  border: 1px solid var(--fg-outline);
   padding: 18px;
+}
+
+.iframeHidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0;
+  pointer-events: none;
+  opacity: 0;
 }
 
 .title {
@@ -38,7 +48,7 @@
 .field input,
 .field textarea {
   width: 100%;
-  border: 1px solid var(--fg);
+  border: 1px solid var(--fg-outline);
   background: var(--bg);
   color: var(--fg);
   font-family: inherit;
@@ -57,12 +67,12 @@
 
 .field input:focus,
 .field textarea:focus {
-  box-shadow: 0 0 0 1px var(--fg) inset;
+  box-shadow: 0 0 0 1px var(--fg-outline) inset;
 }
 
 .submit {
   align-self: flex-start;
-  border: 1px solid var(--fg);
+  border: 1px solid var(--fg-outline);
   background: var(--bg);
   color: var(--fg);
   font-family: inherit;
@@ -89,6 +99,11 @@
   padding-top: 3px;
 }
 
+.error {
+  font-size: 15px;
+  padding-top: 3px;
+}
+
 @media (max-width: 720px) {
   .wrap {
     margin-top: 24px;
@@ -103,7 +118,8 @@
   .field span,
   .field input,
   .field textarea,
-  .success {
+  .success,
+  .error {
     font-size: 14px;
   }
 }
