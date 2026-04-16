@@ -25,7 +25,7 @@ export default function Home() {
             </p>
             <p className={styles.lead}>
               A community-run group of indie makers, coders, designers, and
-              hardware hackers building independent apps and startups together
+              hardware hackers building products together
               in Paris, meeting every Thursday for co-working and demos.
             </p>
             <p className={styles.subLead}>
@@ -68,7 +68,7 @@ export default function Home() {
         <RegistrationForm />
 
         <footer className={styles.footer}>
-          <p>HACKARIS 2026</p>
+          <p>HACKARIS</p>
         </footer>
       </main>
     </>

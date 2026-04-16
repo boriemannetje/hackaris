@@ -6,7 +6,7 @@
 */
 
 :root {
-  --bg: #2255c3;
+  --bg: #1743a1;
   --fg: #fdf6e3;
   --fg-outline: color-mix(in srgb, var(--fg) 50%, transparent);
 }

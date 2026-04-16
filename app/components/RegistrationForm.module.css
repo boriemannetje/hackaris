@@ -17,9 +17,43 @@
 }
 
 .title {
+  width: 100%;
+  border: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: inherit;
   font-size: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-align: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  outline: none;
+}
+
+.title:hover,
+.title:focus-visible {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.panel {
+  overflow: hidden;
+  transform-origin: top;
+  transition:
+    max-height 280ms ease,
+    opacity 220ms ease;
+}
+
+.panelClosed {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.panelOpen {
+  max-height: 1300px;
+  opacity: 1;
 }
 
 .note {

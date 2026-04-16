@@ -41,6 +41,7 @@ export default function RegistrationForm() {
   const submitTimeoutRef = useRef<number | null>(null);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const completeSubmission = useCallback((nextState: SubmitState) => {
     pendingSubmissionRef.current = false;
@@ -113,86 +114,99 @@ export default function RegistrationForm() {
         onLoad={handleHiddenFrameLoad}
       />
 
-      <h3 className={styles.title}>Request An Invite</h3>
-
-      <form
-        ref={formRef}
-        className={styles.form}
-        action={REGISTRATION_FORM_ACTION}
-        method="POST"
-        target="registration_google_form_iframe"
-        onSubmit={handleSubmit}
+      <button
+        type="button"
+        className={styles.title}
+        aria-expanded={isOpen}
+        aria-controls="invite-request-form-panel"
+        onClick={() => setIsOpen((current) => !current)}
       >
-        <label className={styles.field}>
-          <span>Your name</span>
-          <input
-            type="text"
-            name={REGISTRATION_NAME_FIELD}
-            placeholder="Tim Apple"
-            autoComplete="name"
-            required
-          />
-        </label>
+        Request An Invite
+      </button>
 
-        <label className={styles.field}>
-          <span>Email</span>
-          <input
-            type="email"
-            name={REGISTRATION_EMAIL_FIELD}
-            placeholder="tim@apple.com"
-            autoComplete="email"
-            required
-          />
-        </label>
-
-        <label className={styles.field}>
-          <span>Your X or LinkedIn profile</span>
-          <input
-            type="text"
-            name={REGISTRATION_PROFILE_FIELD}
-            placeholder="https://x.com/@ItsMeTimApple"
-            inputMode="url"
-            required
-          />
-        </label>
-
-        <label className={styles.field}>
-          <span>Your personal or product website</span>
-          <input
-            type="text"
-            name={REGISTRATION_WEBSITE_FIELD}
-            placeholder="https://tim.apple.com"
-            inputMode="url"
-            required
-          />
-        </label>
-
-        <label className={styles.field}>
-          <span>Project/startup that you&apos;re building</span>
-          <textarea
-            name={REGISTRATION_PROJECT_FIELD}
-            placeholder="A little about what idea or product you work on, we'd like to know!"
-            rows={5}
-            required
-          />
-        </label>
-
-        <button
-          type="submit"
-          className={styles.submit}
-          disabled={isSubmitting}
+      <div
+        id="invite-request-form-panel"
+        className={`${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
+      >
+        <form
+          ref={formRef}
+          className={styles.form}
+          action={REGISTRATION_FORM_ACTION}
+          method="POST"
+          target="registration_google_form_iframe"
+          onSubmit={handleSubmit}
         >
-          {isSubmitting ? "Submitting..." : "Submit"}
-        </button>
+          <label className={styles.field}>
+            <span>Your name</span>
+            <input
+              type="text"
+              name={REGISTRATION_NAME_FIELD}
+              placeholder="Tim Apple"
+              autoComplete="name"
+              required
+            />
+          </label>
 
-        {submitState === "error" && (
-          <p className={styles.error}>Could not confirm submission. Try again.</p>
-        )}
+          <label className={styles.field}>
+            <span>Email</span>
+            <input
+              type="email"
+              name={REGISTRATION_EMAIL_FIELD}
+              placeholder="tim@apple.com"
+              autoComplete="email"
+              required
+            />
+          </label>
 
-        {submitState === "success" && (
-          <p className={styles.success}>Thanks, invite request received.</p>
-        )}
-      </form>
+          <label className={styles.field}>
+            <span>Your X or LinkedIn profile</span>
+            <input
+              type="text"
+              name={REGISTRATION_PROFILE_FIELD}
+              placeholder="https://x.com/@ItsMeTimApple"
+              inputMode="url"
+              required
+            />
+          </label>
+
+          <label className={styles.field}>
+            <span>Your personal or product website</span>
+            <input
+              type="text"
+              name={REGISTRATION_WEBSITE_FIELD}
+              placeholder="https://tim.apple.com"
+              inputMode="url"
+              required
+            />
+          </label>
+
+          <label className={styles.field}>
+            <span>Project/startup that you&apos;re building</span>
+            <textarea
+              name={REGISTRATION_PROJECT_FIELD}
+              placeholder="A little about what idea or product you work on, we'd like to know!"
+              rows={5}
+              required
+            />
+          </label>
+
+          <button
+            type="submit"
+            className={styles.submit}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Submit"}
+          </button>
+
+          {submitState === "error" && (
+            <p className={styles.error}>Could not confirm submission. Try again.</p>
+          )}
+
+          {submitState === "success" && (
+            <p className={styles.success}>Thanks, invite request received.</p>
+          )}
+        </form>
+      </div>
     </section>
   );
 }
