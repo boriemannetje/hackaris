@@ -50,8 +50,11 @@
 }
 
 .content {
+  position: relative;
+  z-index: 1;
   margin-top: 32px;
   border: 1px solid var(--fg-outline);
+  background: var(--bg);
   padding: 18px;
   display: flex;
   flex-direction: column;

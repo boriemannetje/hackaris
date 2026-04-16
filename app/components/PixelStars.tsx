@@ -17,7 +17,7 @@ export default function PixelStars() {
       return x - Math.floor(x);
     };
 
-    return Array.from({ length: 40 }, (_, id) => ({
+    return Array.from({ length: 80 }, (_, id) => ({
       id,
       x: pseudoRandom(id + 1) * 100,
       y: pseudoRandom(id + 101) * 100,

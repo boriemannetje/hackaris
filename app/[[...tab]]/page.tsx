@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <>
       <PixelStars />
-
       <main className={styles.container}>
         <div className={styles.viewport}>
           <Header />
