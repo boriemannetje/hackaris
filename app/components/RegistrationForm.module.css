@@ -1,0 +1,109 @@
+.wrap {
+  width: 100%;
+  max-width: 780px;
+  margin-top: 34px;
+  border: 1px solid var(--fg);
+  padding: 18px;
+}
+
+.title {
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.note {
+  margin-top: 8px;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.form {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field span {
+  font-size: 15px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--fg);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: inherit;
+  font-size: 15px;
+  padding: 9px 10px;
+  line-height: 1.4;
+  outline: none;
+  border-radius: 0;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--fg);
+  opacity: 0.55;
+}
+
+.field input:focus,
+.field textarea:focus {
+  box-shadow: 0 0 0 1px var(--fg) inset;
+}
+
+.submit {
+  align-self: flex-start;
+  border: 1px solid var(--fg);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: inherit;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 8px 14px;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.submit:hover,
+.submit:focus-visible {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.success {
+  font-size: 15px;
+  padding-top: 3px;
+}
+
+@media (max-width: 720px) {
+  .wrap {
+    margin-top: 24px;
+    padding: 14px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .note,
+  .field span,
+  .field input,
+  .field textarea,
+  .success {
+    font-size: 14px;
+  }
+}

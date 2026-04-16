@@ -1,0 +1,15 @@
+/* ============================================
+   STARBOAT Theme - Strict 2-Color System
+   ============================================
+   Change these two values to re-theme the entire site.
+   All other styles reference only --bg and --fg.
+*/
+
+:root {
+  --bg: #fdf6e3;
+  --fg: #2255c3;
+}
+
+
+
+

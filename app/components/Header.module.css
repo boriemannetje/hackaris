@@ -1,0 +1,23 @@
+.header {
+  text-align: center;
+  padding: 32px 0 24px;
+}
+
+.titleLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title {
+  font-family: var(--font-shelf-life), sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  line-height: 1;
+}
+
+.tagline {
+  font-size: 18px;
+  margin-top: 12px;
+  letter-spacing: 7px;
+}

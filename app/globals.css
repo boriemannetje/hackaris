@@ -1,0 +1,62 @@
+@import './theme.css';
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles - strict 2-color flat design */
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'VT323', monospace;
+  min-height: 100vh;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  transition:
+    background-color 600ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    color 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Initial page load print effect */
+body > * {
+  animation: pagePrintReveal 1200ms steps(32, end) forwards;
+}
+
+@keyframes pagePrintReveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+body * {
+  transition:
+    color 600ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 600ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 600ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    fill 600ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    stroke 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* All text and elements use only fg color */
+a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+/* Selection uses inverted colors */
+::selection {
+  background-color: var(--fg);
+  color: var(--bg);
+}
