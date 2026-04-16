@@ -1,6 +1,20 @@
 .header {
-  text-align: center;
-  padding: 32px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 36px 0 28px;
+}
+
+.globeWrap {
+  flex-shrink: 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
 }
 
 .titleLink {
@@ -10,14 +24,83 @@
 
 .title {
   font-family: var(--font-shelf-life), sans-serif;
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 400;
-  letter-spacing: 8px;
+  letter-spacing: 10px;
   line-height: 1;
 }
 
 .tagline {
-  font-size: 18px;
-  margin-top: 12px;
-  letter-spacing: 7px;
+  margin-top: 6px;
+  font-size: 15px;
+  letter-spacing: 6px;
+  opacity: 0.85;
+}
+
+.meta {
+  margin-top: 14px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  opacity: 0.55;
+}
+
+.meta a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--fg) 40%, transparent);
+  transition: text-decoration-color 180ms ease;
+}
+
+.meta a:hover {
+  text-decoration-color: var(--fg);
+}
+
+/* Tablet / medium — stay horizontal, scale down */
+@media (max-width: 720px) {
+  .header {
+    gap: 20px;
+    padding: 28px 0 22px;
+  }
+
+  .title {
+    font-size: 28px;
+    letter-spacing: 7px;
+  }
+
+  .tagline {
+    margin-top: 5px;
+    font-size: 13px;
+    letter-spacing: 4px;
+  }
+
+  .meta {
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Small phone — still horizontal, tighter */
+@media (max-width: 480px) {
+  .header {
+    gap: 14px;
+    padding: 22px 0 18px;
+  }
+
+  .title {
+    font-size: 22px;
+    letter-spacing: 5px;
+  }
+
+  .tagline {
+    margin-top: 4px;
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .meta {
+    margin-top: 8px;
+    font-size: 10px;
+  }
 }

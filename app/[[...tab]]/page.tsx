@@ -13,20 +13,10 @@ export default function Home() {
           <Header />
 
           <section className={styles.hero}>
-            <p className={styles.meta}>
-              EST 2026. Part of{" "}
-              <a
-                href="https://hacka.network/?utm_source=hackaris"
-                target="_blank"
-                rel="noreferrer"
-              >
-                HACKA* NETWORK
-              </a>
-            </p>
             <p className={styles.lead}>
               A community-run group of indie makers, coders, designers, and
-              hardware hackers building products together
-              in Paris, meeting every Thursday for co-working and demos.
+              hardware hackers building products together in Paris, meeting
+              every Thursday for co-working and demos.
             </p>
             <p className={styles.subLead}>
               Not in Paris?{" "}
@@ -35,10 +25,12 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                More locations
+                More locations →
               </a>
             </p>
           </section>
+
+          <RegistrationForm />
 
           <section className={styles.content}>
             <p>
@@ -64,8 +56,6 @@ export default function Home() {
             </ul>
           </section>
         </div>
-
-        <RegistrationForm />
 
         <footer className={styles.footer}>
           <p>HACKARIS</p>

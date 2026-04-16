@@ -121,13 +121,14 @@ export default function RegistrationForm() {
         aria-controls="invite-request-form-panel"
         onClick={() => setIsOpen((current) => !current)}
       >
-        Request An Invite
+        Join Hackaris
       </button>
 
       <div
         id="invite-request-form-panel"
         className={`${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
       >
+        <div className={styles.panelInner}>
         <form
           ref={formRef}
           className={styles.form}
@@ -206,6 +207,7 @@ export default function RegistrationForm() {
             <p className={styles.success}>Thanks, invite request received.</p>
           )}
         </form>
+        </div>
       </div>
     </section>
   );
