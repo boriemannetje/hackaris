@@ -16,7 +16,7 @@ const vt323 = VT323({
   variable: "--font-vt323",
 });
 
-const siteUrl = "https://hackaris.org";
+const siteUrl = "https://hackaris.xyz";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
